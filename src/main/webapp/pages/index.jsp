@@ -12,6 +12,7 @@
     <title>Home page</title>
 </head>
 <body>
+<h1>Trang chủ đây roài mà ko thấy cái list của mình đâu nhỉ</h1>
 <s:if test="bookDetailList.size() >0">
     <table>
         <thead>

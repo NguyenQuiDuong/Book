@@ -15,7 +15,7 @@
 
 		<action name="listbook"
 			class="indexAction" method="listBook" >
-		    <result name="success">pages/index.jsp</result>
+		    <result name="success">pages/hello.jsp</result>
 		</action>
 
 	</package>
