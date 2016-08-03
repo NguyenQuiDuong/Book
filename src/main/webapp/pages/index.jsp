@@ -17,8 +17,14 @@
     <table>
         <thead>
             <tr>
-                <td>ID</td>
-                <td>Name</td>
+                <th>ID</th>
+                <th>Name</th>
+                <th>AuthorId</th>
+                <th>TypeId</th>
+                <th>StoreId</th>
+                <th>Description</th>
+                <th>Public Year</th>
+                <th>ProductId</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +32,12 @@
             <tr>
                 <td><s:property value="id"/> </td>
                 <td><s:property value="name"/> </td>
+                <td><s:property value="authorId"/></td>
+                <td><s:property value="typeId"/> </td>
+                <td><s:property value="storeId"/> </td>
+                <td><s:property value="description"/> </td>
+                <td><s:property value="publicedYear"/> </td>
+                <td><s:property value="productId"/> </td>
             </tr>
         </s:iterator>
         </tbody>
