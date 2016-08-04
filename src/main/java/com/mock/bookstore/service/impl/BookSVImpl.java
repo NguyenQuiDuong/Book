@@ -18,6 +18,10 @@ public class BookSVImpl implements BookSV {
 	}
 
 	public List<BookDetail> listBook() {
+		List<BookDetail> list = bookDAO.listBook();
+		if(list.size() > 0){
+			int i=0;
+		}
 		return bookDAO.listBook();
 	}
 

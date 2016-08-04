@@ -25,13 +25,13 @@ INSERT INTO `author` VALUES ('3', null, null, null, null);
 -- ----------------------------
 DROP TABLE IF EXISTS `book_detail`;
 CREATE TABLE `book_detail` (
-  `id` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) DEFAULT NULL,
   `author_id` int(11) DEFAULT NULL,
   `type_id` int(11) DEFAULT NULL,
   `store_id` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `publiced_year` year(4) DEFAULT NULL,
+  `publiced_year` date DEFAULT NULL,
   `producer_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_book_author` (`author_id`),
@@ -47,12 +47,12 @@ CREATE TABLE `book_detail` (
 -- ----------------------------
 -- Records of book_detail
 -- ----------------------------
-INSERT INTO `book_detail` VALUES ('NC1000', 'Ba người bạn', '1', '8', '1', null, null, null);
-INSERT INTO `book_detail` VALUES ('NC1001', 'Một bữa no', '1', '8', '2', null, null, null);
-INSERT INTO `book_detail` VALUES ('NC1002', 'Bài học quét nhà', '1', '8', '3', null, null, null);
-INSERT INTO `book_detail` VALUES ('TH1001', 'Từ ấy', '2', '5', '4', null, '1946', null);
-INSERT INTO `book_detail` VALUES ('TH1002', 'Việt Bắc', '2', '5', '5', null, '1954', null);
-INSERT INTO `book_detail` VALUES ('TH1003', 'Gió lộng ', '2', '5', '6', null, '1961', null);
+INSERT INTO `book_detail` VALUES ('1', 'Ba người bạn', '1', '8', '1', null, null, null);
+INSERT INTO `book_detail` VALUES ('2', 'Một bữa no', '1', '8', '2', null, null, null);
+INSERT INTO `book_detail` VALUES ('3', 'Bài học quét nhà', '1', '8', '3', null, null, null);
+INSERT INTO `book_detail` VALUES ('4', 'Từ ấy', '2', '5', '4', null, '1946-04-15', null);
+INSERT INTO `book_detail` VALUES ('5', 'Việt Bắc', '2', '5', '5', null, '1954-08-21', null);
+INSERT INTO `book_detail` VALUES ('6', 'Gió lộng ', '2', '5', '6', null, '1961-11-23', null);
 
 -- ----------------------------
 -- Table structure for book_store
@@ -109,8 +109,8 @@ INSERT INTO `book_type` VALUES ('8', 'Truyện ngắn', null);
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `user_email` varchar(255) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_order_userID` (`user_id`),
   KEY `fk_order_userEmail` (`user_email`),
@@ -128,7 +128,7 @@ CREATE TABLE `order` (
 DROP TABLE IF EXISTS `order_detail`;
 CREATE TABLE `order_detail` (
   `order_id` int(11) NOT NULL,
-  `book_id` varchar(11) NOT NULL,
+  `book_id` int(11) NOT NULL,
   `qualtity` int(11) NOT NULL,
   `unit_price` float DEFAULT NULL,
   `total_price` float NOT NULL,
@@ -168,7 +168,7 @@ CREATE TABLE `user_detail` (
   `username` varchar(20) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id`,`email`),
+  PRIMARY KEY (`id`),
   KEY `fk_userDetail_user` (`user_type_id`),
   KEY `id` (`id`),
   KEY `email` (`email`),

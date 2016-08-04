@@ -35,6 +35,9 @@ public class IndexAction implements ModelDriven {
 
 	public String listBook(){
 		bookDetailList = bookSV.listBook();
+		if(bookDetailList.size()>0){
+			int i=1;
+		}
 		return "success";
 	}
 }
