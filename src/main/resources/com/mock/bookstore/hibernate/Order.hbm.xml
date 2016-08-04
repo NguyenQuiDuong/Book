@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 4, 2016 4:22:00 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class entity-name="Order" name="com.mock.bookstore.model.Order" table="order" catalog="book" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="userDetailByUserEmail" class="UserDetail" fetch="select">
+            <column name="user_email" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userDetailByUserId" class="UserDetail" fetch="select">
+            <column name="user_id" not-null="true" />
+        </many-to-one>
+        <one-to-one name="orderDetail" class="OrderDetail"></one-to-one>
+    </class>
+</hibernate-mapping>

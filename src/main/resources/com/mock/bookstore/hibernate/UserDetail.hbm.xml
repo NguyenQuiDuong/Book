@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 4, 2016 4:22:00 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class entity-name="UserDetail" name="com.mock.bookstore.model.UserDetail" table="user_detail" catalog="book" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userType" class="UserType" fetch="select">
+            <column name="user_type_id" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="username" length="20" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="20" />
+        </property>
+        <set name="ordersForUserEmail" table="order" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_email" not-null="true" />
+            </key>
+            <one-to-many class="Order" />
+        </set>
+        <set name="ordersForUserId" table="order" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <one-to-many class="Order" />
+        </set>
+    </class>
+</hibernate-mapping>

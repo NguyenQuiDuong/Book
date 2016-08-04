@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 4, 2016 4:22:00 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class entity-name="BookStore" name="com.mock.bookstore.model.BookStore" table="book_store" catalog="book" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="bookId" type="string">
+            <column name="book_id" length="11" not-null="true" />
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="quantity" />
+        </property>
+        <property name="enterPrice" type="java.lang.Float">
+            <column name="enter_price" precision="12" scale="0" />
+        </property>
+        <property name="unitPrice" type="java.lang.Float">
+            <column name="unit_price" precision="12" scale="0" />
+        </property>
+        <property name="disscountPrice" type="java.lang.Float">
+            <column name="disscount_price" precision="12" scale="0" />
+        </property>
+        <set name="bookDetails" table="book_detail" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="store_id" />
+            </key>
+            <one-to-many class="BookDetail" />
+        </set>
+    </class>
+</hibernate-mapping>
