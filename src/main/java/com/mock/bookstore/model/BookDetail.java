@@ -112,5 +112,12 @@ public class BookDetail implements java.io.Serializable {
 	public void setOrderDetails(Set<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
 	}
+	
+	@Override
+	public String toString() {
+		String book = "";
+		book += String.valueOf(this.id) + this.name + this.author.getName() + this.bookType.getName();
+		return book;
+	}
 
 }
