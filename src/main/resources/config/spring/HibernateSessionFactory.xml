@@ -18,10 +18,19 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
          <prop key="hibernate.show_sql">true</prop>
        </props>
     </property>
+    
 
     <property name="mappingResources">
 		<list>
-          <value>com/mock/bookstore/hibernate/BookDetail.xml</value>
+          <value>com/mock/bookstore/hibernate/Author.hbm.xml</value>
+          <value>com/mock/bookstore/hibernate/BookDetail.hbm.xml</value>
+          <value>com/mock/bookstore/hibernate/BookStore.hbm.xml</value>
+          <value>com/mock/bookstore/hibernate/BookType.hbm.xml</value>
+          <value>com/mock/bookstore/hibernate/Order.hbm.xml</value>
+          <value>com/mock/bookstore/hibernate/OrderDetail.hbm.xml</value>
+          <value>com/mock/bookstore/hibernate/Producer.hbm.xml</value>
+          <value>com/mock/bookstore/hibernate/UserDetail.hbm.xml</value>
+          <value>com/mock/bookstore/hibernate/UserType.hbm.xml</value>
 		</list>
     </property>
 

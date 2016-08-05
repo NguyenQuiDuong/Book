@@ -15,12 +15,10 @@ public class BookDAOImpl extends HibernateDaoSupport implements BookDAO {
 
 
 	public List<BookDetail> listBook() {
-		List list = getHibernateTemplate().find("FROM BookDetail ");
-		if(list.size() > 0){
-			for (int i= 0; i<list.size();i++){
-				System.out.println(list.get(i).toString());
-			}
-		}
+		String query = "from BookDetail bd, Author a,BookStore bs,BookType bt where bd.bookStore=bs.id"
+				+ " and bd.author=a.id"
+				+ " and bd.bookType = bt.id";
+		List list = getHibernateTemplate().find(query);
 		return list;
 	}
 
