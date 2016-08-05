@@ -5,6 +5,7 @@ import com.mock.bookstore.service.BookSV;
 import com.opensymphony.xwork2.ModelDriven;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,5 +37,19 @@ public class IndexAction implements ModelDriven {
 	public String listBook(){
 		bookDetailList = bookSV.listBook();
 		return "success";
+	}
+	
+	public String addBookDetail() throws Exception{
+		
+		//save it
+		bookDetail.setPublicedYear(new Date());
+		bookSV.addBook(bookDetail);
+	 
+		//reload the book list
+		bookDetailList = null;
+		bookDetailList = bookSV.listBook();
+		
+		return "success";
+	
 	}
 }

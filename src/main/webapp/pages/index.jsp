@@ -46,5 +46,6 @@
 <s:if test="bookDetailList.size() == 0">
     <h1>Khong co sach</h1>
 </s:if>
+
 </body>
 </html>

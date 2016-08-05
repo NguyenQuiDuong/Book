@@ -8,9 +8,19 @@
 	</bean>
 	<bean id="bookSV" class="com.mock.bookstore.service.impl.BookSVImpl">
 		<property name="bookDAO" ref="bookDAO"/>
+		<property name="bookTypeDAO" ref="bookTypeDAO"/>
+		
 	</bean>
 	<bean id="bookDAO" class="com.mock.bookstore.dao.impl.BookDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	
+	<bean id="bookAction" class="com.mock.bookstore.action.BookAction">
+		<property name="bookSV" ref="bookSV"/>
+	</bean>
 
+	<bean id="bookTypeDAO" class="com.mock.bookstore.dao.impl.BookTypeDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
 </beans>
