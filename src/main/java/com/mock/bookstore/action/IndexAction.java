@@ -15,10 +15,10 @@ public class IndexAction implements ModelDriven {
 	BookDetail bookDetail = new BookDetail();
 	List<BookDetail> bookDetailList  = new ArrayList<BookDetail>();
 
-	BookSV bookSV;
+	BookSV bookSv;
 
-	public void setBookSV(BookSV bookSV) {
-		this.bookSV = bookSV;
+	public void setBookSv(BookSV bookSv) {
+		this.bookSv = bookSv;
 	}
 
 	public Object getModel() {
@@ -34,7 +34,7 @@ public class IndexAction implements ModelDriven {
 	}
 
 	public String listBook(){
-		bookDetailList = bookSV.listBook();
+		bookDetailList = bookSv.listBook();
 		return "success";
 	}
 }

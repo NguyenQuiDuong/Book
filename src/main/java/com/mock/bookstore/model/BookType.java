@@ -60,4 +60,9 @@ public class BookType implements java.io.Serializable {
 		this.bookDetails = bookDetails;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.getName();
+	}
 }

@@ -91,5 +91,11 @@ public class UserDetail implements java.io.Serializable {
 	public void setOrdersForUserId(Set<Order> ordersForUserId) {
 		this.ordersForUserId = ordersForUserId;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.getUsername();
+	}
 
 }

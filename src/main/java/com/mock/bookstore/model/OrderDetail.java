@@ -80,4 +80,9 @@ public class OrderDetail implements java.io.Serializable {
 		this.totalPrice = totalPrice;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return String.valueOf(this.getOrderId());
+	}
 }

@@ -65,5 +65,11 @@ public class Producer implements java.io.Serializable {
 	public void setBookDetails(Set<BookDetail> bookDetails) {
 		this.bookDetails = bookDetails;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.getName();
+	}
 
 }

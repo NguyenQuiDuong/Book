@@ -55,5 +55,10 @@ public class UserType implements java.io.Serializable {
 	public void setUserDetails(Set<UserDetail> userDetails) {
 		this.userDetails = userDetails;
 	}
-
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.getName();
+	}
 }

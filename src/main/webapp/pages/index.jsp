@@ -28,12 +28,11 @@
             </tr>
         </thead>
         <tbody>
-        <s:iterator value="bookDetailList" begin="0" end="2" var="book" status="userStatus">
+        <s:iterator value="bookDetailList" var="book" begin="0" end="2" status="userStatus">
             <tr>
-            <s:property value="#book.name"/>
 <%--                 <td><s:property value="id"/> </td> --%>
 <%--                 <td><s:property value="name"/> </td> --%>
-                <td><s:property value="[1].name"/></td>
+                <td><s:property value="#book.name4e365"/></td>
 <%--                 <td><s:property value="typeId"/> </td> --%>
 <%--                 <td><s:property value="storeId"/> </td> --%>
 <%--                 <td><s:property value="description"/> </td> --%>
