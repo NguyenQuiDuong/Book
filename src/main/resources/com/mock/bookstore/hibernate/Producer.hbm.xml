@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Aug 4, 2016 4:22:00 PM by Hibernate Tools 4.3.1.Final -->
 <hibernate-mapping>
-    <class entity-name="Producer" name="com.mock.bookstore.model.Producer" table="producer" catalog="book" optimistic-lock="version">
+    <class entity-name="Producer" name="com.mock.bookstore.model.Producer" table="producer" lazy="false" catalog="book" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />

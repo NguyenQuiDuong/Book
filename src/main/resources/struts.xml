@@ -17,7 +17,9 @@
 			class="bookAction" method="addbookdetail" >
 		    <result name="input">pages/book/addBookDetail.jsp</result>
 		</action>
-
+		<action name="book" class="bookAction">
+			<result name="success">pages/hello.jsp</result>
+		</action>
 		<action name="listbook"
 			class="indexAction" method="listBook" >
 		    <result name="success">pages/hello.jsp</result>

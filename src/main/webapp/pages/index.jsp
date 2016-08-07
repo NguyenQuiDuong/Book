@@ -32,7 +32,7 @@
             <tr>
 <%--                 <td><s:property value="id"/> </td> --%>
 <%--                 <td><s:property value="name"/> </td> --%>
-                <td><s:property value="#book.name4e365"/></td>
+                <td><s:property value="%{bookDetailList.name}"/></td>
 <%--                 <td><s:property value="typeId"/> </td> --%>
 <%--                 <td><s:property value="storeId"/> </td> --%>
 <%--                 <td><s:property value="description"/> </td> --%>
